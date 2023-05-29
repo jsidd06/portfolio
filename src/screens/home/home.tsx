@@ -17,6 +17,7 @@ import { Col, Row, CardImg, Card } from "reactstrap";
 import s1Image from "../../images/s-2.png";
 import axios from "axios";
 import "./home.css";
+import SocialLinks from "../../components/social-link/social-links";
 
 interface VideoItem {
   id: {
@@ -255,6 +256,7 @@ export function Home(props: Props) {
             </div>
           </Col>
         </Row>
+        <SocialLinks />
       </Box>
     </Box>
   );
