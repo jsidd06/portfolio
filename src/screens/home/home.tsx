@@ -14,6 +14,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Card from "../../components/cards/cards";
+import { Col, Row, CardImg } from "reactstrap";
 
 interface Props {
   /**
@@ -107,6 +108,53 @@ export function Home(props: Props) {
       </Box>
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
+        <Row
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "1rem",
+          }}
+        >
+          <Col md={6} lg={6} xl={6} className="d-flex justify-content-center">
+            <div>
+              <span
+                style={{
+                  fontSize: "2rem",
+                  color: "red",
+                  fontWeight: "bold",
+                  marginBottom: "1rem",
+                  textAlign: "center",
+                }}
+              >
+                Hello, I'm Siddharth Jain
+              </span>
+              <span
+                style={{
+                  fontSize: "1.5rem",
+                  color: "black",
+                  fontWeight: "normal",
+                  textAlign: "center",
+                }}
+              >
+                a passionate Software Engineer with 1.8 years of industry
+                experience. I hold a BCA degree and have a strong background in
+                designing and developing innovative software solutions.
+                Proficient in technologies like Javascript, React Native,
+                React.js, Node.js, and Rest API, I am dedicated to delivering
+                high-quality code and thrive in collaborative, cross-functional
+                teams. Committed to continuous learning and staying up-to-date
+                with the latest industry trends, I am excited to showcase my
+                skills and contribute to impactful projects. Welcome to my
+                portfolio website!
+              </span>
+            </div>
+          </Col>
+          <Col md={6} lg={6} xl={6} className="d-flex justify-content-center">
+            <div>
+              <CardImg src="" style={{ width: "80%", maxWidth: "700px" }} />
+            </div>
+          </Col>
+        </Row>
         <Card />
       </Box>
     </Box>

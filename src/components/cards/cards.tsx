@@ -1,53 +1,50 @@
-import { Col, Row, CardImg } from "reactstrap";
-import Image1 from "../../images/s-1.png";
+import React, { useEffect, useState } from "react";
+import { CardImg, Card, CardGroup } from "reactstrap";
+import axios from "axios";
+import "./cards.css";
+interface VideoItem {
+  id: {
+    videoId: string;
+  };
+  snippet: {
+    thumbnails: {
+      medium: {
+        url: string;
+      };
+    };
+    title: string;
+  };
+}
 
 function Cards() {
+  const [videos, setVideos] = useState<VideoItem[]>([]);
+
+  useEffect(() => {
+    // Fetch latest videos from YouTube Data API
+    axios
+      .get(
+        `https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_API_KEY}&channelId=${process.env.REACT_APP_CHANNEL_ID}&part=snippet,id&order=date&maxResults=3`
+      )
+      .then((response) => {
+        setVideos(response.data.items);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <>
-      <Row
-        style={{
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "1rem",
-        }}
-      >
-        <Col md={6} lg={6} xl={6} className="d-flex justify-content-center">
-          <div>
-            <span
-              style={{
-                fontSize: "2rem",
-                color: "red",
-                fontWeight: "bold",
-                marginBottom: "1rem",
-                textAlign: "center",
-              }}
-            >
-              Siddharth Jain is a skilled Software Engineer with 1.8 years of
-              experience.
-            </span>
-            <span
-              style={{
-                fontSize: "1.5rem",
-                color: "black",
-                fontWeight: "normal",
-                textAlign: "center",
-              }}
-            >
-              Proficient in Javascript and React Native, React.js, Node.js, and
-              Rest API, Siddharth Jain designs and develops innovative software
-              solutions. Collaborative and adaptable, Siddharth Jain thrives in
-              cross-functional teams, delivering high-quality code. Committed to
-              continuous learning, Siddharth Jain stays updated with the latest
-              industry trends.
-            </span>
-          </div>
-        </Col>
-        <Col md={6} lg={6} xl={6} className="d-flex justify-content-center">
-          <div>
-            <CardImg src={Image1} style={{ width: "80%", maxWidth: "700px" }} />
-          </div>
-        </Col>
-      </Row>
+      <Card>
+        <CardGroup>
+          {videos.map((video) => (
+            <div key={video.id.videoId} className="card-wrapper">
+              <CardImg src={video.snippet.thumbnails.medium.url} />
+              <div>{video.snippet.title}</div>
+            </div>
+          ))}
+        </CardGroup>
+      </Card>
     </>
   );
 }
