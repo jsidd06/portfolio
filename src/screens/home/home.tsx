@@ -15,6 +15,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Card from "../../components/cards/cards";
 import { Col, Row, CardImg } from "reactstrap";
+import s1Image from "../../images/s-1.png";
 
 interface Props {
   /**
@@ -151,7 +152,12 @@ export function Home(props: Props) {
           </Col>
           <Col md={6} lg={6} xl={6} className="d-flex justify-content-center">
             <div>
-              <CardImg src="" style={{ width: "80%", maxWidth: "700px" }} />
+              {/* <CardImg src={Pic} style={{ width: "80%", maxWidth: "700px" }} /> */}
+              <CardImg
+                src={s1Image}
+                alt="Image"
+                style={{ width: "80%", maxWidth: "700px" }}
+              />
             </div>
           </Col>
         </Row>
