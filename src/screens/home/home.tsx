@@ -13,9 +13,24 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import Card from "../../components/cards/cards";
-import { Col, Row, CardImg } from "reactstrap";
-import s1Image from "../../images/s-1.png";
+import { Col, Row, CardImg, Card } from "reactstrap";
+import s1Image from "../../images/s-2.png";
+import axios from "axios";
+import "./home.css";
+
+interface VideoItem {
+  id: {
+    videoId: string;
+  };
+  snippet: {
+    thumbnails: {
+      medium: {
+        url: string;
+      };
+    };
+    title: string;
+  };
+}
 
 interface Props {
   /**
@@ -31,6 +46,20 @@ const navItems = ["Home", "About", "Contact"];
 export function Home(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [videos, setVideos] = React.useState<VideoItem[]>([]);
+  React.useEffect(() => {
+    // Fetch latest videos from YouTube Data API
+    axios
+      .get(
+        `https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_API_KEY}&channelId=${process.env.REACT_APP_CHANNEL_ID}&part=snippet,id&order=date&maxResults=2`
+      )
+      .then((response) => {
+        setVideos(response.data.items);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -127,7 +156,7 @@ export function Home(props: Props) {
                   textAlign: "center",
                 }}
               >
-                Hello, I'm Siddharth Jain
+                Hello, I'm Siddharth Jain{" "}
               </span>
               <span
                 style={{
@@ -161,7 +190,71 @@ export function Home(props: Props) {
             </div>
           </Col>
         </Row>
-        <Card />
+        <Row
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "1rem",
+          }}
+        >
+          <Col md={6} lg={6} xl={6} className="d-flex justify-content-center">
+            <div className="cards-container">
+              {videos.map((video) => (
+                <a
+                  key={video.id.videoId}
+                  href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card-link"
+                >
+                  <Card className="card-wrapper">
+                    <div className="card-image-container">
+                      <CardImg
+                        src={video.snippet.thumbnails.medium.url}
+                        className="card-image"
+                      />
+                    </div>
+                    <div className="card-title">{video.snippet.title}</div>
+                  </Card>
+                </a>
+              ))}
+            </div>
+          </Col>
+          <Col md={6} lg={6} xl={6} className="d-flex justify-content-center">
+            <div>
+              <span
+                style={{
+                  fontSize: "2rem",
+                  color: "red",
+                  fontWeight: "bold",
+                  marginBottom: "1rem",
+                  textAlign: "center",
+                }}
+              >
+                Welcome to Codemadness,{" "}
+              </span>
+              <span
+                style={{
+                  fontSize: "1.5rem",
+                  color: "black",
+                  fontWeight: "normal",
+                  textAlign: "center",
+                }}
+              >
+                where coding, gaming, and laughter collide! Join me on a mad
+                journey filled with hilarious shorts, coding tutorials, gaming
+                madness, and lipsync shenanigans. Unleash the laughter with
+                quick and quirky videos, learn and giggle through coding
+                challenges, and dive into epic gaming sessions. Experience the
+                joy of lipsyncing with humor and style. Stay connected on
+                Instagram, Twitter, GitHub, Facebook, and Josh for
+                behind-the-scenes peeks and exclusive content. Get ready for a
+                rollercoaster ride of laughter, coding adventures, gaming
+                thrills, and pure entertainment at Codemadness!
+              </span>
+            </div>
+          </Col>
+        </Row>
       </Box>
     </Box>
   );

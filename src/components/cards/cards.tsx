@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { CardImg, Card, CardGroup } from "reactstrap";
+import { CardImg, Card } from "reactstrap";
 import axios from "axios";
 import "./cards.css";
+
 interface VideoItem {
   id: {
     videoId: string;
@@ -35,16 +36,30 @@ function Cards() {
 
   return (
     <>
-      <Card>
-        <CardGroup>
-          {videos.map((video) => (
-            <div key={video.id.videoId} className="card-wrapper">
-              <CardImg src={video.snippet.thumbnails.medium.url} />
-              <div>{video.snippet.title}</div>
-            </div>
-          ))}
-        </CardGroup>
-      </Card>
+      <div style={{ alignItems: "center", justifyContent: "center" }}>
+        <strong>Code Madness Youtube Latest Videos</strong>
+      </div>
+      <div className="cards-container">
+        {videos.map((video) => (
+          <a
+            key={video.id.videoId}
+            href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card-link"
+          >
+            <Card className="card-wrapper">
+              <div className="card-image-container">
+                <CardImg
+                  src={video.snippet.thumbnails.medium.url}
+                  className="card-image"
+                />
+              </div>
+              <div className="card-title">{video.snippet.title}</div>
+            </Card>
+          </a>
+        ))}
+      </div>
     </>
   );
 }
