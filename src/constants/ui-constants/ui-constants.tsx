@@ -14,19 +14,51 @@ export const CONSTANTS_DATA = {
 export const experience = [
   {
     id: 1,
-    company: "DANK GLOBAL",
-    duration: "02/2023-/05/2023",
+    company: "TEAM X",
+    duration: "05/2023-Present",
     role: "Fronted Developer",
-    project_name: ["DANK GLOBAL APP.", " JOIN DANK WEB PROJECT."],
-    technologies: ["Typescript", "React Native"],
+    project_name: ["Game Zone"],
+    technologies: ["React Native", "React.js", "Rest API"],
   },
   {
     id: 2,
     company: "DANK GLOBAL",
-    duration: "02/2023-/05/2023",
+    duration: "02/2023-05/2023",
     role: "Fronted Developer",
-    project_name: ["DANK GLOBAL APP.", "Join"],
-    technologies: ["Typescript", "React Native"],
+    project_name: ["DANK GLOBAL APP PROJECT.", " JOIN DANK WEB PROJECT."],
+    technologies: ["Typescript", "React Native", "React.js", "Rest API"],
+  },
+  {
+    id: 3,
+    company: "AARA TECHNOLOGY PVT.LTD",
+    duration: " 07/2022-01/2023",
+    role: "Web Designer",
+    project_name: [
+      "MY BILL WALLET APP PROJECT.",
+      "POS WEB PROJECT.",
+      "PORTAL WEB PROJECT.",
+    ],
+    technologies: ["React.js", "React Native", "Rest API"],
+  },
+  {
+    id: 4,
+    company: "QWERTY CODE PVT.LTD",
+    duration: "05/2022-07/2022",
+    role: "React Native Developer",
+    project_name: ["BAAP NETWORK PROJECT."],
+    technologies: ["React Native", "Rest API"],
+  },
+  {
+    id: 5,
+    company: "WONDER PILLARS TECHNOLOGY PVT.LTD ",
+    duration: "09/2021-04/2022",
+    role: "Software Developer",
+    project_name: [
+      "FIXCEL PROJECT.",
+      "STOCK HISAB PROJECT.",
+      "VANTAAN TAXI PROJECT",
+    ],
+    technologies: ["React.js", "Rest API", "JavaScript", "HTML5", "CSS"],
   },
 ];
 
