@@ -11,6 +11,25 @@ export const CONSTANTS_DATA = {
     "https://www.youtube.com/channel/UCqQuGOxGE8m7QkupTf9vm2A",
 };
 
+export const language = [
+  {
+    languages: ["English", "Hindi", "Punjabi."],
+  },
+];
+
+export const hobbies = [
+  {
+    hobbies: [
+      "Coding",
+      "Cricket",
+      "Football",
+      "Skating",
+      "Badminton",
+      "Chess.",
+    ],
+  },
+];
+
 export const education = [
   {
     college: "B.C.A.",

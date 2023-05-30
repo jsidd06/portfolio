@@ -17,6 +17,8 @@ type ModalProps = {
   experience?: any;
   skills?: any;
   education?: any;
+  hobbies?: any;
+  language?: any;
 };
 
 export default function Modals({
@@ -25,6 +27,8 @@ export default function Modals({
   experience,
   skills,
   education,
+  hobbies,
+  language,
 }: ModalProps) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -125,6 +129,36 @@ export default function Modals({
                         Extra Course
                       </span>
                       :- {d.extra_course.join(", ")}
+                    </li>
+                  </>
+                ))}
+              </ul>
+            ) : null}
+            {heading === "Hobbies" ? (
+              <ul>
+                {hobbies.map((d: any) => (
+                  <>
+                    <li>
+                      {" "}
+                      <span style={MODAL_COMPONENTS_STYLE.heading_test}>
+                        Hobbies
+                      </span>
+                      :- {d.hobbies.join(", ")}
+                    </li>
+                  </>
+                ))}
+              </ul>
+            ) : null}
+            {heading === "Languages" ? (
+              <ul>
+                {language.map((d: any) => (
+                  <>
+                    <li>
+                      {" "}
+                      <span style={MODAL_COMPONENTS_STYLE.heading_test}>
+                        Talking Language
+                      </span>
+                      :- {d.languages.join(", ")}
                     </li>
                   </>
                 ))}
