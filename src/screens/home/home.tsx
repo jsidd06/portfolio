@@ -19,6 +19,11 @@ import axios from "axios";
 import "./home.css";
 import SocialLinks from "../../components/social-link/social-links";
 import ModalComponents from "../../components/modals/modals";
+import ExpImg from "../../images/s-3.png";
+import HobImg from "../../images/h-1.png";
+import EducImg from "../../images/education.png";
+import LanImg from "../../images/language.png";
+import SkillImg from "../../images/skills.png";
 
 interface VideoItem {
   id: {
@@ -257,9 +262,49 @@ export function Home(props: Props) {
             </div>
           </Col>
         </Row>
-        <ModalComponents />
-        <ModalComponents />
-        {/* <SocialLinks /> */}
+        <div className="container">
+          <div className="subContainer">
+            <img src={ExpImg} alt="image" className="img" />
+            <ModalComponents
+              buttonText="Experience"
+              heading="Experience"
+              description="sfdjkf"
+            />
+          </div>
+          <div className="subContainer">
+            <img src={SkillImg} alt="image" className="img" />
+            <ModalComponents
+              buttonText="Skills"
+              heading="Skills"
+              description="sfdjkf"
+            />
+          </div>
+          <div className="subContainer">
+            <img src={EducImg} alt="image" className="img" />
+            <ModalComponents
+              buttonText="Education"
+              heading="Education"
+              description="sfdjkf"
+            />
+          </div>
+          <div className="subContainer">
+            <img src={HobImg} alt="image" className="img" />
+            <ModalComponents
+              buttonText="Hobbies"
+              heading="Hobbies"
+              description="sfdjkf"
+            />
+          </div>
+          <div className="subContainer">
+            <img src={LanImg} alt="image" className="img" />
+            <ModalComponents
+              buttonText="Languages"
+              heading="Languages"
+              description="sfdjkf"
+            />
+          </div>
+        </div>
+        <SocialLinks />
       </Box>
     </Box>
   );
