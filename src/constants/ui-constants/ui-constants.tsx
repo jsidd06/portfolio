@@ -11,6 +11,24 @@ export const CONSTANTS_DATA = {
     "https://www.youtube.com/channel/UCqQuGOxGE8m7QkupTf9vm2A",
 };
 
+export const education = [
+  {
+    college: "B.C.A.",
+    school: ["12th class", " 10th class."],
+    extra_course: [
+      "Web development",
+      "Hi-Tech",
+      "Digital Marketing",
+      "Network computer education",
+      "CCC [Course on Computer concepts]",
+      "American English Speaking",
+      "SAS Training [Success After Success]",
+      "HDFC Life",
+      "BPO.",
+    ],
+  },
+];
+
 export const skills = [
   {
     languages: [

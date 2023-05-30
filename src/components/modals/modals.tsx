@@ -16,6 +16,7 @@ type ModalProps = {
   heading?: any;
   experience?: any;
   skills?: any;
+  education?: any;
 };
 
 export default function Modals({
@@ -23,6 +24,7 @@ export default function Modals({
   heading,
   experience,
   skills,
+  education,
 }: ModalProps) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -94,6 +96,35 @@ export default function Modals({
                         Extra Skills
                       </span>
                       :- {d.extraSkills.join(", ")}
+                    </li>
+                  </>
+                ))}
+              </ul>
+            ) : null}
+            {heading === "Education" ? (
+              <ul>
+                {education.map((d: any) => (
+                  <>
+                    <li>
+                      {" "}
+                      <span style={MODAL_COMPONENTS_STYLE.heading_test}>
+                        College
+                      </span>
+                      :- {d.college}
+                    </li>
+                    <li>
+                      {" "}
+                      <span style={MODAL_COMPONENTS_STYLE.heading_test}>
+                        School
+                      </span>
+                      :- {d.school.join(", ")}
+                    </li>
+                    <li>
+                      {" "}
+                      <span style={MODAL_COMPONENTS_STYLE.heading_test}>
+                        Extra Course
+                      </span>
+                      :- {d.extra_course.join(", ")}
                     </li>
                   </>
                 ))}
