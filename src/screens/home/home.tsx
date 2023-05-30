@@ -24,6 +24,7 @@ import HobImg from "../../images/h-1.png";
 import EducImg from "../../images/education.png";
 import LanImg from "../../images/language.png";
 import SkillImg from "../../images/skills.png";
+import YoutubeImg from "../../images/youtube.png";
 
 interface VideoItem {
   id: {
@@ -206,25 +207,12 @@ export function Home(props: Props) {
         >
           <Col md={6} lg={6} xl={6} className="d-flex justify-content-center">
             <div className="cards-container">
-              {videos.map((video) => (
-                <a
-                  key={video.id.videoId}
-                  href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card-link"
-                >
-                  <Card className="card-wrapper">
-                    <div className="card-image-container">
-                      <CardImg
-                        src={video.snippet.thumbnails.medium.url}
-                        className="card-image"
-                      />
-                    </div>
-                    <div className="card-title">{video.snippet.title}</div>
-                  </Card>
-                </a>
-              ))}
+              <a
+                href="https://www.youtube.com/channel/UCqQuGOxGE8m7QkupTf9vm2A"
+                target="_blank"
+              >
+                <img src={YoutubeImg} />
+              </a>
             </div>
           </Col>
           <Col md={6} lg={6} xl={6} className="d-flex justify-content-center">
