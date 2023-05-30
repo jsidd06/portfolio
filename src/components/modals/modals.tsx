@@ -22,7 +22,7 @@ type ModalProps = {
   description?: any;
 };
 
-export default function ModalComponents({
+export default function Modals({
   buttonText,
   description,
   heading,

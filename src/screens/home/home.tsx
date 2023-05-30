@@ -15,32 +15,13 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import "./home.css";
 import SocialLinks from "../../components/social-link/social-links";
-import ModalComponents from "../../components/modals/modals";
-
+import ModalComponents from "../../components/modals/modal-components";
 import BodyContainer from "../../components/bodyContainer/bodyContainer";
 import { CONSTANTS_DATA } from "../../constants/ui-constants/ui-constants";
 import { CONSTANTS_IMAGES } from "../../constants/image-constants/image-constants";
 
-interface VideoItem {
-  id: {
-    videoId: string;
-  };
-  snippet: {
-    thumbnails: {
-      medium: {
-        url: string;
-      };
-    };
-    title: string;
-  };
-}
-
 interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window?: () => Window;
+  window?: () => Window; // Injected by the documentation to work in an iframe. You won't need it on your project.
 }
 
 const drawerWidth = 240;
@@ -49,12 +30,6 @@ const navItems = ["Home", "About", "Contact"];
 export function Home(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [videos, setVideos] = React.useState<VideoItem[]>([]);
-  const [action, setAction] = React.useState(false);
-
-  React.useEffect(() => {
-    setAction(false);
-  }, []);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -146,48 +121,7 @@ export function Home(props: Props) {
           action={true}
           link={CONSTANTS_DATA.youtube_channel_link}
         />
-        <div className="container">
-          <div className="subContainer">
-            <img src={CONSTANTS_IMAGES.expImg} alt="image" className="img" />
-            <ModalComponents
-              buttonText="Experience"
-              heading="Experience"
-              description="sfdjkf"
-            />
-          </div>
-          <div className="subContainer">
-            <img src={CONSTANTS_IMAGES.skillImg} alt="image" className="img" />
-            <ModalComponents
-              buttonText="Skills"
-              heading="Skills"
-              description="sfdjkf"
-            />
-          </div>
-          <div className="subContainer">
-            <img src={CONSTANTS_IMAGES.educImg} alt="image" className="img" />
-            <ModalComponents
-              buttonText="Education"
-              heading="Education"
-              description="sfdjkf"
-            />
-          </div>
-          <div className="subContainer">
-            <img src={CONSTANTS_IMAGES.hobImg} alt="image" className="img" />
-            <ModalComponents
-              buttonText="Hobbies"
-              heading="Hobbies"
-              description="sfdjkf"
-            />
-          </div>
-          <div className="subContainer">
-            <img src={CONSTANTS_IMAGES.lanImg} alt="image" className="img" />
-            <ModalComponents
-              buttonText="Languages"
-              heading="Languages"
-              description="sfdjkf"
-            />
-          </div>
-        </div>
+        <ModalComponents />
         <SocialLinks />
       </Box>
     </Box>

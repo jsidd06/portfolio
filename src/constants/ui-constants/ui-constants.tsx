@@ -1,3 +1,5 @@
+import { CONSTANTS_IMAGES } from "../image-constants/image-constants";
+
 export const CONSTANTS_DATA = {
   name: "Hello, I'm Siddharth Jain",
   describe:
@@ -8,3 +10,41 @@ export const CONSTANTS_DATA = {
   youtube_channel_link:
     "https://www.youtube.com/channel/UCqQuGOxGE8m7QkupTf9vm2A",
 };
+
+export const MODAL_CONSTANT_DATA = [
+  {
+    id: 1,
+    buttonText: "Experience",
+    heading: "Experience",
+    description: "sfgsjkdfhskfhsk",
+    image: CONSTANTS_IMAGES.expImg,
+  },
+  {
+    id: 2,
+    buttonText: "Skills",
+    heading: "Skills",
+    description: "sfgsjkdfhskfhsk",
+    image: CONSTANTS_IMAGES.skillImg,
+  },
+  {
+    id: 3,
+    buttonText: "Education",
+    heading: "Education",
+    description: "sfgsjkdfhskfhsk",
+    image: CONSTANTS_IMAGES.educImg,
+  },
+  {
+    id: 4,
+    buttonText: "Hobbies",
+    heading: "Hobbies",
+    description: "sfgsjkdfhskfhsk",
+    image: CONSTANTS_IMAGES.hobImg,
+  },
+  {
+    id: 5,
+    buttonText: "Languages",
+    heading: "Languages",
+    description: "sfgsjkdfhskfhsk",
+    image: CONSTANTS_IMAGES.lanImg,
+  },
+];
