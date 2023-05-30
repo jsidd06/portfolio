@@ -16,9 +16,16 @@ export const MODAL_CONSTANT_DATA = [
     id: 1,
     buttonText: "Experience",
     heading: "Experience",
-    description:
-      "DANK GLOBAL [02/2023-Present]  DANK GLOBAL  Work with Axios for API integration Use Follow up Atoms code structures Main technologies used: Typescript, React native . JOIN GLOBAL  Use Material UI for Design Use Axios for API integration Main technologies used: Typescript, React.js, API, HTML5, CSS.",
     image: CONSTANTS_IMAGES.expImg,
+    company: "DANK GLOBAL",
+    duration: "02/2023-/05/2023",
+    role: "Fronted Developer",
+    project_name: "DANK GLOBAL APP.",
+    tasks: [
+      "Work with Axios for API integration.",
+      "Use Follow up Atoms code structures.",
+    ],
+    technologies: ["Typescript", "React Native"],
   },
   {
     id: 2,

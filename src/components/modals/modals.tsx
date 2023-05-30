@@ -9,16 +9,35 @@ type ModalProps = {
   buttonText?: any;
   heading?: any;
   description?: any;
+  company?: any;
+  duration?: any;
+  role?: any;
+  tasks?: any[];
+  technologies?: any[];
+  project_name?: any;
 };
 
 export default function Modals({
   buttonText,
-  description,
   heading,
+  company,
+  duration,
+  role,
+  tasks,
+  technologies,
+  project_name,
 }: ModalProps) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const formatTasks = (tasks?: any[]) => {
+    return tasks?.map((task, index) => (
+      <Typography key={index} id="modal-modal-description" sx={{ mt: 2 }}>
+        {task}
+      </Typography>
+    ));
+  };
 
   return (
     <div>
@@ -34,7 +53,23 @@ export default function Modals({
             {heading}
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            {description}
+            Company Name: {company} Duration: [{duration}]
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Job Duration: {duration}
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Company Role: {role}
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Project Name: {project_name}
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Job Tasks
+          </Typography>
+          {formatTasks(tasks)}
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Main Technologies used: {technologies?.join(", ")}
           </Typography>
         </Box>
       </Modal>

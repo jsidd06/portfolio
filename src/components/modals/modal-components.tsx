@@ -16,7 +16,12 @@ function ModalComponents() {
             <Modals
               buttonText={d.buttonText}
               heading={d.heading}
-              description={d.description}
+              company={d.company}
+              duration={d.duration}
+              role={d.role}
+              tasks={d.tasks}
+              technologies={d.technologies}
+              project_name={d.project_name}
             />
           </div>
         ))}
