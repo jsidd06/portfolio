@@ -13,18 +13,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { Col, Row, CardImg, Card } from "reactstrap";
-import s1Image from "../../images/s-2.png";
-import axios from "axios";
 import "./home.css";
 import SocialLinks from "../../components/social-link/social-links";
 import ModalComponents from "../../components/modals/modals";
-import ExpImg from "../../images/s-3.png";
-import HobImg from "../../images/h-1.png";
-import EducImg from "../../images/education.png";
-import LanImg from "../../images/language.png";
-import SkillImg from "../../images/skills.png";
-import YoutubeImg from "../../images/youtube.png";
+
+import BodyContainer from "../../components/bodyContainer/bodyContainer";
+import { CONSTANTS_DATA } from "../../constants/ui-constants/ui-constants";
+import { CONSTANTS_IMAGES } from "../../constants/image-constants/image-constants";
 
 interface VideoItem {
   id: {
@@ -55,18 +50,10 @@ export function Home(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [videos, setVideos] = React.useState<VideoItem[]>([]);
+  const [action, setAction] = React.useState(false);
+
   React.useEffect(() => {
-    // Fetch latest videos from YouTube Data API
-    axios
-      .get(
-        `https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_API_KEY}&channelId=${process.env.REACT_APP_CHANNEL_ID}&part=snippet,id&order=date&maxResults=2`
-      )
-      .then((response) => {
-        setVideos(response.data.items);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    setAction(false);
   }, []);
 
   const handleDrawerToggle = () => {
@@ -146,113 +133,22 @@ export function Home(props: Props) {
       </Box>
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
-        <Row
-          style={{
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "1rem",
-          }}
-        >
-          <Col md={6} lg={6} xl={6} className="d-flex justify-content-center">
-            <div>
-              <span
-                style={{
-                  fontSize: "2rem",
-                  color: "red",
-                  fontWeight: "bold",
-                  marginBottom: "1rem",
-                  textAlign: "center",
-                }}
-              >
-                Hello, I'm Siddharth Jain{" "}
-              </span>
-              <span
-                style={{
-                  fontSize: "1.5rem",
-                  color: "black",
-                  fontWeight: "normal",
-                  textAlign: "center",
-                }}
-              >
-                a passionate Software Engineer with 1.8 years of industry
-                experience. I hold a BCA degree and have a strong background in
-                designing and developing innovative software solutions.
-                Proficient in technologies like Javascript, React Native,
-                React.js, Node.js, and Rest API, I am dedicated to delivering
-                high-quality code and thrive in collaborative, cross-functional
-                teams. Committed to continuous learning and staying up-to-date
-                with the latest industry trends, I am excited to showcase my
-                skills and contribute to impactful projects. Welcome to my
-                portfolio website!
-              </span>
-            </div>
-          </Col>
-          <Col md={6} lg={6} xl={6} className="d-flex justify-content-center">
-            <div>
-              {/* <CardImg src={Pic} style={{ width: "80%", maxWidth: "700px" }} /> */}
-              <CardImg
-                src={s1Image}
-                alt="Image"
-                style={{ width: "80%", maxWidth: "700px" }}
-              />
-            </div>
-          </Col>
-        </Row>
-        <Row
-          style={{
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "1rem",
-          }}
-        >
-          <Col md={6} lg={6} xl={6} className="d-flex justify-content-center">
-            <div className="cards-container">
-              <a
-                href="https://www.youtube.com/channel/UCqQuGOxGE8m7QkupTf9vm2A"
-                target="_blank"
-              >
-                <img src={YoutubeImg} />
-              </a>
-            </div>
-          </Col>
-          <Col md={6} lg={6} xl={6} className="d-flex justify-content-center">
-            <div>
-              <span
-                style={{
-                  fontSize: "2rem",
-                  color: "red",
-                  fontWeight: "bold",
-                  marginBottom: "1rem",
-                  textAlign: "center",
-                }}
-              >
-                Welcome to Codemadness,{" "}
-              </span>
-              <span
-                style={{
-                  fontSize: "1.5rem",
-                  color: "black",
-                  fontWeight: "normal",
-                  textAlign: "center",
-                }}
-              >
-                where coding, gaming, and laughter collide! Join me on a mad
-                journey filled with hilarious shorts, coding tutorials, gaming
-                madness, and lipsync shenanigans. Unleash the laughter with
-                quick and quirky videos, learn and giggle through coding
-                challenges, and dive into epic gaming sessions. Experience the
-                joy of lipsyncing with humor and style. Stay connected on
-                Instagram, Twitter, GitHub, Facebook, and Josh for
-                behind-the-scenes peeks and exclusive content. Get ready for a
-                rollercoaster ride of laughter, coding adventures, gaming
-                thrills, and pure entertainment at Codemadness!
-              </span>
-            </div>
-          </Col>
-        </Row>
+        <BodyContainer
+          heading={CONSTANTS_DATA.name}
+          description={CONSTANTS_DATA.describe}
+          image={CONSTANTS_IMAGES.p1}
+          action={false}
+        />
+        <BodyContainer
+          heading={CONSTANTS_DATA.youtube_name}
+          description={CONSTANTS_DATA.youtube_description}
+          image={CONSTANTS_IMAGES.youtube_logo}
+          action={true}
+          link={CONSTANTS_DATA.youtube_channel_link}
+        />
         <div className="container">
           <div className="subContainer">
-            <img src={ExpImg} alt="image" className="img" />
+            <img src={CONSTANTS_IMAGES.expImg} alt="image" className="img" />
             <ModalComponents
               buttonText="Experience"
               heading="Experience"
@@ -260,7 +156,7 @@ export function Home(props: Props) {
             />
           </div>
           <div className="subContainer">
-            <img src={SkillImg} alt="image" className="img" />
+            <img src={CONSTANTS_IMAGES.skillImg} alt="image" className="img" />
             <ModalComponents
               buttonText="Skills"
               heading="Skills"
@@ -268,7 +164,7 @@ export function Home(props: Props) {
             />
           </div>
           <div className="subContainer">
-            <img src={EducImg} alt="image" className="img" />
+            <img src={CONSTANTS_IMAGES.educImg} alt="image" className="img" />
             <ModalComponents
               buttonText="Education"
               heading="Education"
@@ -276,7 +172,7 @@ export function Home(props: Props) {
             />
           </div>
           <div className="subContainer">
-            <img src={HobImg} alt="image" className="img" />
+            <img src={CONSTANTS_IMAGES.hobImg} alt="image" className="img" />
             <ModalComponents
               buttonText="Hobbies"
               heading="Hobbies"
@@ -284,7 +180,7 @@ export function Home(props: Props) {
             />
           </div>
           <div className="subContainer">
-            <img src={LanImg} alt="image" className="img" />
+            <img src={CONSTANTS_IMAGES.lanImg} alt="image" className="img" />
             <ModalComponents
               buttonText="Languages"
               heading="Languages"
