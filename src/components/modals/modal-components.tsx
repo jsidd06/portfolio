@@ -2,6 +2,7 @@ import Modals from "./modals";
 import {
   MODAL_CONSTANT_DATA,
   experience,
+  skills,
 } from "../../constants/ui-constants/ui-constants";
 import { MODAL_COMPONENTS_STYLE } from "./modal-components.style";
 
@@ -20,6 +21,7 @@ function ModalComponents() {
               buttonText={d.buttonText}
               heading={d.heading}
               experience={experience}
+              skills={skills}
             />
           </div>
         ))}

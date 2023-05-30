@@ -15,12 +15,14 @@ type ModalProps = {
   buttonText?: any;
   heading?: any;
   experience?: any;
+  skills?: any;
 };
 
 export default function Modals({
   buttonText,
   heading,
   experience,
+  skills,
 }: ModalProps) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -40,39 +42,63 @@ export default function Modals({
             {heading}
           </Typography>
           <Box sx={{ maxHeight: "70vh", overflowY: "auto" }}>
-            <TableContainer>
-              <Table>
-                <TableHead>
-                  <TableRow>
-                    <TableCell>ID</TableCell>
-                    <TableCell>Company Name</TableCell>
-                    <TableCell>Work Duration</TableCell>
-                    <TableCell>Company Role</TableCell>
-                    <TableCell>Company Project Name</TableCell>
-                    <TableCell>Main Technologies is used</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {experience.map((item: any) => (
-                    <TableRow key={item.id}>
-                      <TableCell>{item.id}</TableCell>
-                      <TableCell>{item.company}</TableCell>
-                      <TableCell>{item.duration}</TableCell>
-                      <TableCell>{item.role}</TableCell>
-                      <TableCell>
-                        {item.project_name.map((project: any) => (
-                          <span>
-                            {project.split(".").join(".\n")}
-                            <br />
-                          </span>
-                        ))}
-                      </TableCell>
-                      <TableCell>{item.technologies.join(", ")}</TableCell>
+            {heading === "Experience" ? (
+              <TableContainer>
+                <Table>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>ID</TableCell>
+                      <TableCell>Company Name</TableCell>
+                      <TableCell>Work Duration</TableCell>
+                      <TableCell>Company Role</TableCell>
+                      <TableCell>Company Project Name</TableCell>
+                      <TableCell>Main Technologies is used</TableCell>
                     </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
+                  </TableHead>
+                  <TableBody>
+                    {experience.map((item: any) => (
+                      <TableRow key={item.id}>
+                        <TableCell>{item.id}</TableCell>
+                        <TableCell>{item.company}</TableCell>
+                        <TableCell>{item.duration}</TableCell>
+                        <TableCell>{item.role}</TableCell>
+                        <TableCell>
+                          {item.project_name.map((project: any) => (
+                            <span>
+                              {project.split(".").join(".\n")}
+                              <br />
+                            </span>
+                          ))}
+                        </TableCell>
+                        <TableCell>{item.technologies.join(", ")}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            ) : null}
+            {heading === "Skills" ? (
+              <ul>
+                {skills.map((d: any) => (
+                  <>
+                    <li>
+                      {" "}
+                      <span style={MODAL_COMPONENTS_STYLE.heading_test}>
+                        Programming language
+                      </span>
+                      :- {d.languages.join(", ")}
+                    </li>
+                    <li>
+                      {" "}
+                      <span style={MODAL_COMPONENTS_STYLE.heading_test}>
+                        Extra Skills
+                      </span>
+                      :- {d.extraSkills.join(", ")}
+                    </li>
+                  </>
+                ))}
+              </ul>
+            ) : null}
           </Box>
         </Box>
       </Modal>

@@ -11,6 +11,35 @@ export const CONSTANTS_DATA = {
     "https://www.youtube.com/channel/UCqQuGOxGE8m7QkupTf9vm2A",
 };
 
+export const skills = [
+  {
+    languages: [
+      "React.js",
+      "React Native",
+      "Typescript",
+      "Rest API",
+      "Node.js",
+      "Mongo DB",
+      "Jquery",
+      "JavaScript",
+      "Github Version control",
+      "HTML5",
+      "CSS",
+      "C.",
+    ],
+    extraSkills: [
+      "WordsPress",
+      "Microsoft Word",
+      "Microsoft Excel",
+      "Microsoft Power Point",
+      "Paint",
+      "Linux",
+      "Window 11",
+      "CoralDraw.",
+    ],
+  },
+];
+
 export const experience = [
   {
     id: 1,
@@ -74,19 +103,6 @@ export const MODAL_CONSTANT_DATA = [
     buttonText: "Skills",
     heading: "Skills",
     image: CONSTANTS_IMAGES.skillImg,
-    experience: [
-      {
-        company: "DANK GLOBAL",
-        duration: "02/2023-/05/2023",
-        role: "Fronted Developer",
-        project_name: "DANK GLOBAL APP.",
-        tasks: [
-          "Work with Axios for API integration.",
-          "Use Follow up Atoms code structures.",
-        ],
-        technologies: ["Typescript", "React Native"],
-      },
-    ],
   },
   {
     id: 3,
