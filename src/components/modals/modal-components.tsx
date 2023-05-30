@@ -1,5 +1,8 @@
 import Modals from "./modals";
-import { MODAL_CONSTANT_DATA } from "../../constants/ui-constants/ui-constants";
+import {
+  MODAL_CONSTANT_DATA,
+  experience,
+} from "../../constants/ui-constants/ui-constants";
 import { MODAL_COMPONENTS_STYLE } from "./modal-components.style";
 
 function ModalComponents() {
@@ -16,12 +19,7 @@ function ModalComponents() {
             <Modals
               buttonText={d.buttonText}
               heading={d.heading}
-              company={d.company}
-              duration={d.duration}
-              role={d.role}
-              tasks={d.tasks}
-              technologies={d.technologies}
-              project_name={d.project_name}
+              experience={experience}
             />
           </div>
         ))}

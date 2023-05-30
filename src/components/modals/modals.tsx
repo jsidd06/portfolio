@@ -4,40 +4,27 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { MODAL_COMPONENTS_STYLE } from "./modal-components.style";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
 
 type ModalProps = {
   buttonText?: any;
   heading?: any;
-  description?: any;
-  company?: any;
-  duration?: any;
-  role?: any;
-  tasks?: any[];
-  technologies?: any[];
-  project_name?: any;
+  experience?: any;
 };
 
 export default function Modals({
   buttonText,
   heading,
-  company,
-  duration,
-  role,
-  tasks,
-  technologies,
-  project_name,
+  experience,
 }: ModalProps) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
-  const formatTasks = (tasks?: any[]) => {
-    return tasks?.map((task, index) => (
-      <Typography key={index} id="modal-modal-description" sx={{ mt: 2 }}>
-        {task}
-      </Typography>
-    ));
-  };
 
   return (
     <div>
@@ -52,25 +39,39 @@ export default function Modals({
           <Typography id="modal-modal-title" variant="h6" component="h2">
             {heading}
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Company Name: {company} Duration: [{duration}]
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Job Duration: {duration}
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Company Role: {role}
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Project Name: {project_name}
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Job Tasks
-          </Typography>
-          {formatTasks(tasks)}
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Main Technologies used: {technologies?.join(", ")}
-          </Typography>
+          <TableContainer>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell>ID</TableCell>
+                  <TableCell>Company</TableCell>
+                  <TableCell>Duration</TableCell>
+                  <TableCell>Role</TableCell>
+                  <TableCell>Project Name</TableCell>
+                  <TableCell>Main Technologies is used</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {experience.map((item: any) => (
+                  <TableRow key={item.id}>
+                    <TableCell>{item.id}</TableCell>
+                    <TableCell>{item.company}</TableCell>
+                    <TableCell>{item.duration}</TableCell>
+                    <TableCell>{item.role}</TableCell>
+                    <TableCell>
+                      {item.project_name.map((project: any) => (
+                        <span>
+                          {project.split(".").join(".\n")}
+                          <br />
+                        </span>
+                      ))}
+                    </TableCell>
+                    <TableCell>{item.technologies.join(", ")}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
         </Box>
       </Modal>
     </div>

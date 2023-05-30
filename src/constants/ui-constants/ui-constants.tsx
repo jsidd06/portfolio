@@ -11,28 +11,50 @@ export const CONSTANTS_DATA = {
     "https://www.youtube.com/channel/UCqQuGOxGE8m7QkupTf9vm2A",
 };
 
+export const experience = [
+  {
+    id: 1,
+    company: "DANK GLOBAL",
+    duration: "02/2023-/05/2023",
+    role: "Fronted Developer",
+    project_name: ["DANK GLOBAL APP.", " JOIN DANK WEB PROJECT."],
+    technologies: ["Typescript", "React Native"],
+  },
+  {
+    id: 2,
+    company: "DANK GLOBAL",
+    duration: "02/2023-/05/2023",
+    role: "Fronted Developer",
+    project_name: ["DANK GLOBAL APP.", "Join"],
+    technologies: ["Typescript", "React Native"],
+  },
+];
+
 export const MODAL_CONSTANT_DATA = [
   {
     id: 1,
     buttonText: "Experience",
     heading: "Experience",
     image: CONSTANTS_IMAGES.expImg,
-    company: "DANK GLOBAL",
-    duration: "02/2023-/05/2023",
-    role: "Fronted Developer",
-    project_name: "DANK GLOBAL APP.",
-    tasks: [
-      "Work with Axios for API integration.",
-      "Use Follow up Atoms code structures.",
-    ],
-    technologies: ["Typescript", "React Native"],
   },
   {
     id: 2,
     buttonText: "Skills",
     heading: "Skills",
-    description: "sfgsjkdfhskfhsk",
     image: CONSTANTS_IMAGES.skillImg,
+    experience: [
+      {
+        company: "DANK GLOBAL",
+        duration: "02/2023-/05/2023",
+        role: "Fronted Developer",
+        project_name: "DANK GLOBAL APP.",
+        tasks: [
+          "Work with Axios for API integration.",
+          "Use Follow up Atoms code structures.",
+        ],
+        technologies: ["Typescript", "React Native"],
+      },
+    ],
   },
   {
     id: 3,
