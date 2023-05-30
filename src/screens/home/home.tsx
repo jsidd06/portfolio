@@ -18,6 +18,7 @@ import s1Image from "../../images/s-2.png";
 import axios from "axios";
 import "./home.css";
 import SocialLinks from "../../components/social-link/social-links";
+import ModalComponents from "../../components/modals/modals";
 
 interface VideoItem {
   id: {
@@ -256,7 +257,9 @@ export function Home(props: Props) {
             </div>
           </Col>
         </Row>
-        <SocialLinks />
+        <ModalComponents />
+        <ModalComponents />
+        {/* <SocialLinks /> */}
       </Box>
     </Box>
   );
