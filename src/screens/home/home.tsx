@@ -19,6 +19,7 @@ import ModalComponents from "../../components/modals/modal-components";
 import BodyContainer from "../../components/bodyContainer/bodyContainer";
 import { CONSTANTS_DATA } from "../../constants/ui-constants/ui-constants";
 import { CONSTANTS_IMAGES } from "../../constants/image-constants/image-constants";
+import Footer from "../../components/footer/footer";
 
 interface Props {
   window?: () => Window; // Injected by the documentation to work in an iframe. You won't need it on your project.
@@ -123,6 +124,7 @@ export function Home(props: Props) {
         />
         <ModalComponents />
         <SocialLinks />
+        <Footer email="jsidd06@gmail.com" />
       </Box>
     </Box>
   );
