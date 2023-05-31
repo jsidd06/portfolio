@@ -1,3 +1,4 @@
+import { ICONS } from "../icons/icons";
 import { CONSTANTS_IMAGES } from "../image-constants/image-constants";
 
 export const CONSTANTS_DATA = {
@@ -10,6 +11,29 @@ export const CONSTANTS_DATA = {
   youtube_channel_link:
     "https://www.youtube.com/channel/UCqQuGOxGE8m7QkupTf9vm2A",
 };
+
+export const socialData = [
+  {
+    link: "https://github.com/jsidd06",
+    icon: ICONS.git,
+  },
+  {
+    link: "https://www.facebook.com/sidd.jain.90",
+    icon: ICONS.fb,
+  },
+  {
+    link: "https://twitter.com/codesiddharth",
+    icon: ICONS.tw,
+  },
+  {
+    link: "https://www.youtube.com/channel/UCqQuGOxGE8m7QkupTf9vm2A",
+    icon: ICONS.yt,
+  },
+  {
+    link: "https://www.linkedin.com/in/contact-siddharth-jain/",
+    icon: ICONS.ln,
+  },
+];
 
 export const language = [
   {
