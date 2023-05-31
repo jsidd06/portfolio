@@ -4,7 +4,7 @@
 .pnp.js
 
 # Built files
-/build
+
 /dist
 
 # Logs
