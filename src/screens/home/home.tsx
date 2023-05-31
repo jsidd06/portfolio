@@ -51,8 +51,9 @@ export function Home(props: Props) {
           action={true}
           link={CONSTANTS_DATA.youtube_channel_link}
         />
-        <ModalComponents />
         <SocialLinks />
+        <ModalComponents />
+
         <Footer email="jsidd06@gmail.com" />
       </Box>
     </Box>

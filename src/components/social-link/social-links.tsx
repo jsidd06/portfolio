@@ -18,11 +18,6 @@ function SocialLinks() {
       }}
     >
       <Col md={6} lg={6} xl={6} className="d-flex justify-content-center">
-        <div className="cards-container">
-          <img src={SocialImg} alt="Social" />
-        </div>
-      </Col>
-      <Col md={6} lg={6} xl={6} className="d-flex justify-content-center">
         <div
           style={{
             justifyContent: "space-between",
@@ -43,6 +38,11 @@ function SocialLinks() {
               ))}
             </div>
           </div>
+        </div>
+      </Col>
+      <Col md={6} lg={6} xl={6} className="d-flex justify-content-center">
+        <div className="cards-container">
+          <img src={SocialImg} alt="Social" />
         </div>
       </Col>
     </Row>

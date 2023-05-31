@@ -28,13 +28,11 @@ function BodyContainer({
             </div>
           </Col>
           <Col md={6} lg={6} xl={6} className="d-flex justify-content-center">
-            <div>
-              <CardImg
-                src={image}
-                alt="Image"
-                style={{ width: "80%", maxWidth: "700px" }}
-              />
-            </div>
+            <CardImg
+              src={image}
+              alt="Image"
+              style={{ width: "80%", maxWidth: "700px" }}
+            />
           </Col>
         </Row>
       ) : (
@@ -48,7 +46,11 @@ function BodyContainer({
           <Col md={6} lg={6} xl={6} className="d-flex justify-content-center">
             <div className="cards-container">
               <a href={link} target="_blank">
-                <img src={image} />
+                <CardImg
+                  src={image}
+                  alt="Image"
+                  style={{ width: "80%", maxWidth: "700px" }}
+                />
               </a>
             </div>
           </Col>
