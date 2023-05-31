@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.e7b23031.css",
-    "main.js": "/static/js/main.81787d25.js",
-    "static/js/787.fbf010eb.chunk.js": "/static/js/787.fbf010eb.chunk.js",
-    "static/media/social.png": "/static/media/social.5672ed323c46e93220c1.png",
-    "static/media/youtube.png": "/static/media/youtube.e85b8257419a793068e9.png",
-    "static/media/education.png": "/static/media/education.c2abe6e4c4629933f720.png",
-    "static/media/s-2.png": "/static/media/s-2.6e1062c217940467abdf.png",
-    "static/media/h-1.png": "/static/media/h-1.886ce5313c1a64d2becf.png",
-    "static/media/language.png": "/static/media/language.0deb75b24fa51876bbe7.png",
-    "static/media/skills.png": "/static/media/skills.b245e5624b24fc4baa28.png",
-    "static/media/s-3.png": "/static/media/s-3.d78b0f7e89e3a6f14ade.png",
-    "index.html": "/index.html",
-    "main.e7b23031.css.map": "/static/css/main.e7b23031.css.map",
-    "main.81787d25.js.map": "/static/js/main.81787d25.js.map",
-    "787.fbf010eb.chunk.js.map": "/static/js/787.fbf010eb.chunk.js.map"
+    "main.css": "/portoflio/static/css/main.e7b23031.css",
+    "main.js": "/portoflio/static/js/main.ea269e40.js",
+    "static/js/787.fbf010eb.chunk.js": "/portoflio/static/js/787.fbf010eb.chunk.js",
+    "static/media/social.png": "/portoflio/static/media/social.5672ed323c46e93220c1.png",
+    "static/media/youtube.png": "/portoflio/static/media/youtube.e85b8257419a793068e9.png",
+    "static/media/education.png": "/portoflio/static/media/education.c2abe6e4c4629933f720.png",
+    "static/media/s-2.png": "/portoflio/static/media/s-2.6e1062c217940467abdf.png",
+    "static/media/h-1.png": "/portoflio/static/media/h-1.886ce5313c1a64d2becf.png",
+    "static/media/language.png": "/portoflio/static/media/language.0deb75b24fa51876bbe7.png",
+    "static/media/skills.png": "/portoflio/static/media/skills.b245e5624b24fc4baa28.png",
+    "static/media/s-3.png": "/portoflio/static/media/s-3.d78b0f7e89e3a6f14ade.png",
+    "index.html": "/portoflio/index.html",
+    "main.e7b23031.css.map": "/portoflio/static/css/main.e7b23031.css.map",
+    "main.ea269e40.js.map": "/portoflio/static/js/main.ea269e40.js.map",
+    "787.fbf010eb.chunk.js.map": "/portoflio/static/js/787.fbf010eb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e7b23031.css",
-    "static/js/main.81787d25.js"
+    "static/js/main.ea269e40.js"
   ]
 }
