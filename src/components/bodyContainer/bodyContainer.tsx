@@ -45,7 +45,7 @@ function BodyContainer({
         >
           <Col md={6} lg={6} xl={6} className="d-flex justify-content-center">
             <div className="cards-container">
-              <a href={link} target="_blank">
+              <a href={link}>
                 <CardImg
                   src={image}
                   alt="Image"

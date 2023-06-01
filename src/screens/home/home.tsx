@@ -12,16 +12,7 @@ import { CONSTANTS_DATA } from "../../constants/ui-constants/ui-constants";
 import { CONSTANTS_IMAGES } from "../../constants/image-constants/image-constants";
 import Footer from "../../components/footer/footer";
 
-interface Props {
-  window?: () => Window; // Injected by the documentation to work in an iframe. You won't need it on your project.
-}
-
-export function Home(props: Props) {
-  const { window } = props;
-
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
-
+export function Home() {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
