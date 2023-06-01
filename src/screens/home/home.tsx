@@ -1,10 +1,8 @@
-import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import "./home.css";
 import SocialLinks from "../../components/social-link/social-links";
 import ModalComponents from "../../components/modals/modal-components";
 import BodyContainer from "../../components/bodyContainer/bodyContainer";
