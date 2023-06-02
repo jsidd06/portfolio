@@ -2,7 +2,7 @@ export const MODAL_COMPONENTS_STYLE = {
   container: {
     display: "flex" as "flex",
     flexWrap: "wrap" as "wrap",
-    justifyContent: "space-between" as "space-between",
+    justifyContent: "center" as "center",
     alignItems: "center" as "center",
     marginBottom: "5rem",
     marginTop: "5rem",
