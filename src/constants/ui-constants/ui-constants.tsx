@@ -3,14 +3,28 @@ import { CONSTANTS_IMAGES } from "../image-constants/image-constants";
 
 export const CONSTANTS_DATA = {
   name: "Hello, I'm Siddharth Jain",
-  describe:
-    " a passionate Software Engineer with 1.8 years of industry  experience. I hold a BCA degree and have a strong background in  designing and developing innovative software solutions. Proficient in technologies like Javascript, React Native,  React.js, Node.js, and Rest API, I am dedicated to delivering   high-quality code and thrive in collaborative, cross-functional  teams. Committed to continuous learning and staying up-to-date  with the latest industry trends, I am excited to showcase my   skills and contribute to impactful projects. Welcome to my portfolio website!",
+  describe: getDescription(),
   youtube_name: "Welcome to Codemadness,",
   youtube_description:
-    "  where coding, gaming, and laughter collide! Join me on a mad journey filled with hilarious shorts, coding tutorials, gaming madness, and lipsync shenanigans. Unleash the laughter with quick and quirky videos, learn and giggle through coding challenges, and dive into epic gaming sessions. Experience the  joy of lipsyncing with humor and style. Stay connected on  Instagram, Twitter, GitHub, Facebook, and Josh fo  behind-the-scenes peeks and exclusive content. Get ready for a  rollercoaster ride of laughter, coding adventures, gaming   thrills, and pure entertainment at Codemadness!",
+    " where coding, gaming, and laughter collide! Join me on a mad journey filled with hilarious shorts, coding tutorials, gaming madness, and lipsync shenanigans. Unleash the laughter with quick and quirky videos, learn and giggle through coding challenges, and dive into epic gaming sessions. Experience the  joy of lipsyncing with humor and style. Stay connected on  Instagram, Twitter, GitHub, Facebook, and Josh fo  behind-the-scenes peeks and exclusive content. Get ready for a  rollercoaster ride of laughter, coding adventures, gaming   thrills, and pure entertainment at Codemadness!",
   youtube_channel_link:
     "https://www.youtube.com/channel/UCqQuGOxGE8m7QkupTf9vm2A",
 };
+
+function getDescription() {
+  const experienceStartDate = new Date(2021, 9, 6); // Month value starts from 0 (e.g., 5 represents June)
+  const currentDate = new Date();
+  const yearDiff =
+    currentDate.getFullYear() - experienceStartDate.getFullYear();
+  const monthDiff = currentDate.getMonth() - experienceStartDate.getMonth();
+  const totalMonths = yearDiff * 12 + monthDiff;
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+
+  return `A passionate Software Engineer with ${years}.${months} years of industry experience. I hold a BCA degree and have a strong background in designing and developing innovative software solutions. Proficient in technologies like Javascript, React Native, React.js, Node.js, and Rest API, I am dedicated to delivering high-quality code and thrive in collaborative, cross-functional teams. Committed to continuous learning and staying up-to-date with the latest industry trends, I am excited to showcase my skills and contribute to impactful projects. Welcome to my portfolio website!`;
+}
+
+console.log(CONSTANTS_DATA.describe);
 
 export const socialData = [
   {
